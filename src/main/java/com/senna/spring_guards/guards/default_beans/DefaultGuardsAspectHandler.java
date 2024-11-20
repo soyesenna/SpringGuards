@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 @Component(DefaultBeanNames.DEFAULT_USE_GUARDS_ASPECT_HANDLER)
 public class DefaultGuardsAspectHandler implements UseGuardsAspectHandler {
 
+  private static final String DEFAULT_GUARD_FAIL_MESSAGE = "Guard failed";
+
   @Override
   public void beforeApplyingGuards() {
 
@@ -23,6 +25,6 @@ public class DefaultGuardsAspectHandler implements UseGuardsAspectHandler {
 
   @Override
   public Object whenGuardFails() {
-    return null;
+    return DEFAULT_GUARD_FAIL_MESSAGE;
   }
 }
