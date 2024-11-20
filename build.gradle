@@ -1,13 +1,13 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-	id 'java'
+	id 'java-library'
 	id "com.vanniktech.maven.publish" version "0.28.0"
 	id 'signing'
 }
 
 group = 'org.senna'
-version = '0.0.2-beta'
+version = '0.0.3-beta'
 
 repositories {
 	mavenCentral()
@@ -27,7 +27,7 @@ mavenPublishing {
 	signAllPublications()
 	publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-	coordinates("io.github.soyesenna", "spring-guards", "0.0.2-beta")
+	coordinates("io.github.soyesenna", "spring-guards", "0.0.3-beta")
 
 	pom {
 		name = 'spring-guards'
@@ -63,9 +63,9 @@ mavenPublishing {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter:3.3.5'
+	api 'org.springframework.boot:spring-boot-starter:3.3.5'
 
-	implementation 'org.springframework.boot:spring-boot-starter-aop:3.3.5'
+	api 'org.springframework.boot:spring-boot-starter-aop:3.3.5'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
